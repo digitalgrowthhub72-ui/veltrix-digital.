@@ -15,6 +15,9 @@
     a.target = '_blank'; a.rel = 'noopener';
   });
   $$('[data-ig]').forEach(function (a) { a.href = D.instagram; });
+  $$('[data-up]').forEach(function (a) { a.href = D.upwork; });
+  $$('[data-book]').forEach(function (a) { a.href = D.booking.replace('?gv=true', ''); a.target = '_blank'; a.rel = 'noopener'; });
+  var bf = $('#bookFrame'); if (bf) bf.src = D.booking;
   $$('[data-fb]').forEach(function (a) { a.href = D.facebook; });
   $$('[data-mail]').forEach(function (a) { a.href = 'mailto:' + D.email + '?subject=' + encodeURIComponent('Website enquiry'); });
   var yr = $('#year'); if (yr) yr.textContent = new Date().getFullYear();
@@ -181,7 +184,7 @@
   $$('a', links).forEach(function (a) { a.addEventListener('click', closeMenu); });
   document.addEventListener('click', function (e) { if (!nav.contains(e.target)) closeMenu(); });
 
-  var sections = ['home', 'about', 'services', 'portfolio', 'testimonials', 'faq', 'contact'].map(function (id) { return document.getElementById(id); }).filter(Boolean);
+  var sections = ['home', 'about', 'services', 'portfolio', 'testimonials', 'faq', 'book', 'contact'].map(function (id) { return document.getElementById(id); }).filter(Boolean);
   if ('IntersectionObserver' in window) {
     var so = new IntersectionObserver(function (es) {
       es.forEach(function (e) {

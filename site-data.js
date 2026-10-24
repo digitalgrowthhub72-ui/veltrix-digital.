@@ -8,6 +8,8 @@ window.VELTRIX = {
   /* WhatsApp number in international format, digits only (Nigeria = 234 + number without the first 0) */
   whatsapp: "2349056606876",
   email: "sowemimoayuba744@gmail.com",
+  upwork: "https://www.upwork.com/freelancers/~014cfb033d93b9ed96",
+  booking: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ3epmQY0nYQF_Yl3A0FLdwpH40Y6b3Aoba1AWbiLc5uk9Tn7coQVqORGMZEpZUIXNek8APd2JPm?gv=true",
   instagram: "https://www.instagram.com/ayokunlesowemimo/",
   facebook: "https://www.facebook.com/profile.php?id=61579270116766",
 
