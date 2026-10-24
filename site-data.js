@@ -25,15 +25,22 @@ window.VELTRIX = {
        2. Set  image: "assets/portfolio/project-1.jpg"
        3. Change the title, category, and (optional) link
      Leave  image: ""  to show the "coming soon" placeholder.
-     category must be one of: "Website", "Landing Page", "Redesign", "Brand"
+     category must be one of: "Websites", "Landing Pages", "Redesigns", "Brand", "Automation"
+       position: "top" or "center" (which part of a tall image shows on the card)
      --------------------------------------------------------------- */
   portfolio: [
-    { title: "Project 01", category: "Website",      description: "Short note about this project.", image: "", link: "" },
-    { title: "Project 02", category: "Landing Page", description: "Short note about this project.", image: "", link: "" },
-    { title: "Project 03", category: "Redesign",     description: "Short note about this project.", image: "", link: "" },
-    { title: "Project 04", category: "Website",      description: "Short note about this project.", image: "", link: "" },
-    { title: "Project 05", category: "Brand",        description: "Short note about this project.", image: "", link: "" },
-    { title: "Project 06", category: "Landing Page", description: "Short note about this project.", image: "", link: "" }
+    { title: "Professional Business Website Design", category: "Websites", image: "assets/portfolio/business.jpg", position: "top", link: "",
+      description: "A modern digital agency website concept showcasing services, brand messaging and a professional online presence." },
+    { title: "Conversion-Focused Landing Page", category: "Landing Pages", image: "assets/portfolio/landing.jpg", position: "top", link: "",
+      description: "A marketing landing page concept with clear messaging, structured service sections and conversion-focused calls to action." },
+    { title: "Business Website Redesign", category: "Redesigns", image: "assets/portfolio/redesign.jpg", position: "center", link: "",
+      description: "A website redesign approach focused on clearer messaging, mobile usability, trust signals and easier customer enquiries." },
+    { title: "Premium Brand Identity & Visual Design", category: "Brand", image: "assets/portfolio/brand.jpg", position: "center", link: "",
+      description: "A luxury fashion branding concept using a refined monogram, typography and a coordinated visual identity system." },
+    { title: "E-commerce Store Design", category: "Websites", image: "assets/portfolio/ecommerce.jpg", position: "center", link: "",
+      description: "An e-commerce platform showcasing product management, storefront design and automated retail workflows." },
+    { title: "CRM & Lead Follow-Up Automation", category: "Automation", image: "assets/portfolio/crm.jpg", position: "center", link: "",
+      description: "A CRM automation concept illustrating how lead capture, pipeline management and follow-up workflows can work together." }
   ],
 
   /* ---------------------------------------------------------------

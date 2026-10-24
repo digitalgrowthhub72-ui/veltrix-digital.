@@ -57,7 +57,7 @@
   if (pg && D.portfolio) {
     pg.innerHTML = D.portfolio.map(function (p, i) {
       var media = p.image
-        ? '<img src="' + esc(p.image) + '" alt="' + esc(p.title) + '" loading="lazy">'
+        ? '<img src="' + esc(p.image) + '" alt="' + esc(p.title) + '" loading="lazy" style="object-position:' + esc(p.position || 'center') + '">'
         : '<div class="work__ph"><svg><use href="#i-image"/></svg><span>Project image coming soon</span></div>';
       return '<article class="work reveal" style="--d:' + (i % 3) * 0.1 + 's" data-cat="' + esc(p.category) + '" data-img="' + esc(p.image) + '" data-link="' + esc(p.link) + '" data-title="' + esc(p.title) + '" tabindex="0">' +
         media +
@@ -74,6 +74,7 @@
       var link = w.getAttribute('data-link'), img = w.getAttribute('data-img');
       if (link) { window.open(link, '_blank', 'noopener'); return; }
       if (img) {
+        lbImg.onload = function () { lb.classList.toggle('tall', lbImg.naturalHeight / lbImg.naturalWidth > 1.3); };
         lbImg.src = img; lbImg.alt = w.getAttribute('data-title'); lbP.textContent = w.getAttribute('data-title');
         lb.hidden = false; requestAnimationFrame(function () { lb.classList.add('show'); });
       }
