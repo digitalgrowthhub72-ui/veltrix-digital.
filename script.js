@@ -217,6 +217,17 @@
     });
   }
 
+  /* ---------- Footer: quick WhatsApp message + back to top ---------- */
+  var ff = $('#footForm');
+  if (ff) ff.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var m = $('#footMsg').value.trim();
+    window.open(waLink(m ? 'Hello Ayuba, ' + m : D.defaultMessage), '_blank', 'noopener');
+  });
+  $$('[data-top]').forEach(function (a) {
+    a.addEventListener('click', function (e) { e.preventDefault(); window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }); });
+  });
+
   /* ---------- Contact form -> WhatsApp ---------- */
   var form = $('#waForm');
   if (form) {
