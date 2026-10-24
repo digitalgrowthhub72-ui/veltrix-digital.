@@ -193,6 +193,8 @@ h3{font-size:1.15rem}
 
 /* ===== About ===== */
 .about{background:linear-gradient(180deg,var(--navy) 0,var(--navy-2) 100%);color:#fff;overflow:hidden}
+.page-about .about{min-height:100vh;padding-top:9rem;display:flex;align-items:center}
+.page-about .about .wrap{width:min(1180px,100% - 2.5rem)}
 .about::after{content:"";position:absolute;right:-200px;bottom:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(6,182,212,.18),transparent 65%);pointer-events:none}
 .about__grid{display:grid;grid-template-columns:minmax(0,440px) minmax(0,1fr);gap:clamp(3rem,8vw,7rem);align-items:center;position:relative;z-index:1}
 .about__photo{position:relative;width:100%;max-width:440px;justify-self:start}
