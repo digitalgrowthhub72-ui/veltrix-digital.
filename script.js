@@ -22,6 +22,34 @@
   $$('[data-mail]').forEach(function (a) { a.href = 'mailto:' + D.email + '?subject=' + encodeURIComponent('Website enquiry'); });
   var yr = $('#year'); if (yr) yr.textContent = new Date().getFullYear();
 
+  /* ---------- Let's talk modal ---------- */
+  var talk = $('#talk'), lastFocus = null;
+  function openTalk(msg) {
+    var text = msg || D.defaultMessage;
+    $('#talkWa').href = waLink(text);
+    $('#talkMail').href = 'mailto:' + D.email + '?subject=' + encodeURIComponent('Website enquiry') + '&body=' + encodeURIComponent(text);
+    $('#talkUp').href = D.upwork;
+    lastFocus = document.activeElement;
+    talk.hidden = false;
+    requestAnimationFrame(function () { talk.classList.add('show'); $('.talk__close', talk).focus(); });
+    document.body.style.overflow = 'hidden';
+  }
+  function closeTalk() {
+    talk.classList.remove('show');
+    document.body.style.overflow = '';
+    setTimeout(function () { talk.hidden = true; }, 300);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  if (talk) {
+    document.addEventListener('click', function (e) {
+      var t = e.target.closest && e.target.closest('[data-talk]');
+      if (t) { e.preventDefault(); closeMenuSafe(); openTalk(t.getAttribute('data-msg')); }
+      else if (e.target === talk || e.target.closest('.talk__close')) closeTalk();
+    });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !talk.hidden) closeTalk(); });
+  }
+  function closeMenuSafe() { var l = $('#navLinks'), b = $('#burger'); if (l) l.classList.remove('open'); if (b) b.setAttribute('aria-expanded', 'false'); }
+
   /* ---------- Services ---------- */
   var services = [
     ['i-monitor', 'Website Design', 'Modern websites that communicate your business clearly and professionally.'],
@@ -37,11 +65,11 @@
   if (sg) {
     sg.innerHTML = services.map(function (s, i) {
       var msg = 'Hello Ayuba, I\'m interested in ' + s[1] + ' for my business.';
-      return '<a class="svc reveal" style="--d:' + (i % 4) * 0.08 + 's" href="' + waLink(msg) + '" target="_blank" rel="noopener">' +
+      return '<a class="svc reveal" style="--d:' + (i % 4) * 0.08 + 's" href="#" data-talk data-msg="' + esc(msg) + '">' +
         '<span class="svc__n">0' + (i + 1) + '</span>' +
         '<span class="svc__icon"><svg><use href="#' + s[0] + '"/></svg></span>' +
         '<h3>' + esc(s[1]) + '</h3><p>' + esc(s[2]) + '</p>' +
-        '<span class="svc__link">Chat on WhatsApp <svg><use href="#i-arrow"/></svg></span></a>';
+        '<span class="svc__link">Let’s talk <svg><use href="#i-arrow"/></svg></span></a>';
     }).join('');
     $$('.svc', sg).forEach(function (c) {
       c.addEventListener('pointermove', function (e) {

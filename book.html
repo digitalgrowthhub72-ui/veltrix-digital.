@@ -41,6 +41,7 @@
     <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="currentColor"/></symbol>
     <symbol id="i-brief" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></g></symbol>
     <symbol id="i-cal" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></g></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.6 8.6 0 0 1-3.6-.8L3 21l1.9-5.1A8.4 8.4 0 1 1 21 11.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-ext" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   </defs>
 </svg>
@@ -63,9 +64,9 @@
       <a href="index.html#faq">FAQ</a>
       <a href="book.html" class="is-active">Book</a>
       <a href="index.html#contact">Contact</a>
-      <a href="#" class="btn btn--primary nav__cta-mobile" data-wa><svg><use href="#i-wa"/></svg>Chat on WhatsApp</a>
+      <a href="#" class="btn btn--primary nav__cta-mobile" data-talk><svg><use href="#i-chat"/></svg>Let’s talk</a>
     </nav>
-    <a href="#" class="btn btn--primary nav__cta" data-wa><svg><use href="#i-wa"/></svg><span>Chat on WhatsApp</span></a>
+    <a href="#" class="btn btn--primary nav__cta" data-talk><svg><use href="#i-chat"/></svg><span>Let’s talk</span></a>
     <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
@@ -84,7 +85,7 @@
     </div>
     <div class="book__actions reveal">
       <a href="#" class="btn btn--dark" data-book><svg><use href="#i-cal"/></svg>Open booking page in a new tab</a>
-      <a href="#" class="btn btn--primary" data-wa><svg><use href="#i-wa"/></svg>Chat on WhatsApp instead</a>
+      <a href="#" class="btn btn--primary" data-talk><svg><use href="#i-chat"/></svg>Let’s talk</a>
     </div>
     <div class="book__gcal">
 <!-- Google Calendar Appointment Scheduling begin -->
@@ -172,10 +173,22 @@
 </footer>
 
 <!-- Floating WhatsApp -->
-<a href="#" class="fab" data-wa aria-label="Chat on WhatsApp"><span class="fab__tip">Chat on WhatsApp</span><svg><use href="#i-wa"/></svg></a>
+<button type="button" class="fab fab--talk" data-talk aria-label="Let’s talk"><svg><use href="#i-chat"/></svg><span>Let’s talk</span></button>
 
 <!-- Lightbox -->
 <div class="lightbox" id="lightbox" hidden><button class="lightbox__close" aria-label="Close"><svg><use href="#i-x"/></svg></button><img alt=""><p></p></div>
+
+<!-- Let's talk modal -->
+<div class="talk" id="talk" hidden role="dialog" aria-modal="true" aria-labelledby="talkTitle">
+  <div class="talk__box">
+    <button class="talk__close" type="button" aria-label="Close"><svg><use href="#i-x"/></svg></button>
+    <h3 id="talkTitle">Let’s talk, your way.</h3>
+    <p>Pick whatever feels easiest. I’ll meet you there.</p>
+    <a class="talk__opt" id="talkWa" href="#" target="_blank" rel="noopener"><span class="talk__ic talk__ic--wa"><svg><use href="#i-wa"/></svg></span><span>Chat on WhatsApp</span><svg class="talk__go"><use href="#i-arrow"/></svg></a>
+    <a class="talk__opt" id="talkMail" href="#"><span class="talk__ic"><svg><use href="#i-mail"/></svg></span><span>Send me an email</span><svg class="talk__go"><use href="#i-arrow"/></svg></a>
+    <a class="talk__opt" id="talkUp" href="#" target="_blank" rel="noopener"><span class="talk__ic"><svg><use href="#i-brief"/></svg></span><span>Message me on Upwork</span><svg class="talk__go"><use href="#i-arrow"/></svg></a>
+  </div>
+</div>
 
 <script src="site-data.js"></script>
 <script src="script.js"></script>
