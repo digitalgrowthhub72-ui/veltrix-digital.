@@ -280,9 +280,10 @@ h3{font-size:1.15rem}
 .acc__item.open .acc__a{grid-template-rows:1fr}
 
 /* ===== Booking ===== */
-.book{background:var(--tint)}
+.book{background:var(--tint);min-height:100vh;padding-top:8.5rem}
+.contact__book{margin:-.8rem 0 1.6rem}
 .book__card{max-width:960px;margin:auto;background:#fff;border-radius:28px;box-shadow:var(--shadow);overflow:hidden;border:1px solid var(--line)}
-.book__card iframe{display:block;width:100%;height:680px;border:0}
+.book__card iframe{display:block;width:100%;height:860px;border:0}
 .book__actions{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:center;margin-top:1.8rem}
 .book__gcal{display:flex;justify-content:center;margin-top:1.4rem}
 .book__gcal:empty{display:none}
@@ -392,6 +393,7 @@ h3{font-size:1.15rem}
   .fab{width:56px;height:56px}
   .footer__inner{flex-direction:column;align-items:flex-start}
 }
+@media (max-width:700px){.book__card iframe{height:980px}.book{padding-top:7rem}}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
   .reveal{opacity:1;transform:none}

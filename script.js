@@ -185,7 +185,7 @@
   document.addEventListener('click', function (e) { if (!nav.contains(e.target)) closeMenu(); });
 
   var sections = ['home', 'about', 'services', 'portfolio', 'testimonials', 'faq', 'book', 'contact'].map(function (id) { return document.getElementById(id); }).filter(Boolean);
-  if ('IntersectionObserver' in window) {
+  if ('IntersectionObserver' in window && !document.body.classList.contains('page-book')) {
     var so = new IntersectionObserver(function (es) {
       es.forEach(function (e) {
         if (e.isIntersecting) {
