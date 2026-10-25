@@ -53,12 +53,19 @@ window.VELTRIX = {
 
   /* ---------------------------------------------------------------
      TESTIMONIALS
-     Replace each placeholder with a real client.
-     photo is optional (e.g. "assets/clients/ada.jpg"); leave "" to show initials.
+     Replace each placeholder with a genuine client review.
+       quote     - what the client said
+       name      - client's name
+       role      - their role / title (optional)
+       business  - their business (optional)
+       photo     - optional picture, e.g. "assets/clients/ada.jpg" ("" shows a neutral icon)
+       rating    - optional number 1-5. Leave out unless the client gave one.
+       placeholder - set to false once the review is real (removes the "Placeholder" tag)
+     Add or remove entries freely; the carousel adjusts automatically.
      --------------------------------------------------------------- */
   testimonials: [
-    { quote: "Your client's testimonial will appear here. Replace this text with what they said about working with Veltrix Digital.", name: "Client Name", role: "Their Role", business: "Business Name", photo: "" },
-    { quote: "A second testimonial goes here. Short, specific quotes about the result or experience work best.", name: "Client Name", role: "Their Role", business: "Business Name", photo: "" },
-    { quote: "A third testimonial goes here. You can add as many as you like — the slider adjusts automatically.", name: "Client Name", role: "Their Role", business: "Business Name", photo: "" }
+    { placeholder: true, quote: "Placeholder testimonial. Replace this text with a genuine review from a client about their experience working with Veltrix Digital.", name: "Client Name", role: "Role", business: "Business Name", photo: "" },
+    { placeholder: true, quote: "Placeholder testimonial. A sentence or two about the result or the experience works best. Add the client's real words here.", name: "Client Name", role: "Role", business: "Business Name", photo: "" },
+    { placeholder: true, quote: "Placeholder testimonial. Add as many reviews as you like; the carousel will adjust automatically.", name: "Client Name", role: "Role", business: "Business Name", photo: "" }
   ]
 };

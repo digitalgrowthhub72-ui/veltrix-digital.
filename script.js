@@ -125,41 +125,83 @@
     });
   }
 
-  /* ---------- Testimonials ---------- */
-  var track = $('#sliderTrack');
-  if (track && D.testimonials) {
-    track.innerHTML = D.testimonials.map(function (t) {
-      var initials = t.name.split(/\s+/).map(function (w) { return w[0]; }).slice(0, 2).join('').toUpperCase();
-      var av = t.photo ? '<img src="' + esc(t.photo) + '" alt="' + esc(t.name) + '">' : esc(initials);
-      var stars = '<svg><use href="#i-star"/></svg>'.repeat(5);
-      return '<article class="tcard"><div class="tcard__stars" aria-label="5 out of 5 stars">' + stars + '</div>' +
-        '<blockquote>“' + esc(t.quote) + '”</blockquote>' +
-        '<div class="tcard__who"><span class="avatar">' + av + '</span><div><b>' + esc(t.name) + '</b><small>' + esc(t.role) + ', ' + esc(t.business) + '</small></div></div></article>';
+  /* ---------- Testimonials carousel ---------- */
+  var stage = $('#tmStage');
+  if (stage && D.testimonials && D.testimonials.length) {
+    var T = D.testimonials, n = T.length, cur = 0;
+    stage.innerHTML = T.map(function (t, i) {
+      var photo = t.photo ? '<img src="' + esc(t.photo) + '" alt="' + esc(t.name) + '">' : '<svg aria-hidden="true"><use href="#i-user"/></svg>';
+      var label = [t.role, t.business].filter(Boolean).map(esc).join(' · ');
+      var stars = '';
+      if (t.rating && t.rating >= 1 && t.rating <= 5) {
+        stars = '<div class="tm__stars" role="img" aria-label="Rated ' + t.rating + ' out of 5">' + '<svg><use href="#i-star"/></svg>'.repeat(Math.round(t.rating)) + '</div>';
+      }
+      return '<article class="tm__card" data-i="' + i + '" role="group" aria-roledescription="slide" aria-label="Testimonial ' + (i + 1) + ' of ' + n + '">' +
+        (t.placeholder !== false ? '<span class="tm__ph">Placeholder</span>' : '') +
+        '<span class="tm__avatar">' + photo + '</span>' +
+        '<h3 class="tm__name">' + esc(t.name) + '</h3>' +
+        (label ? '<p class="tm__role">' + label + '</p>' : '') +
+        '<span class="tm__q" aria-hidden="true">&rdquo;</span>' +
+        '<blockquote>' + esc(t.quote) + '</blockquote>' + stars + '</article>';
     }).join('');
-    var slides = D.testimonials.length, idx = 0, timer;
-    var dots = $('#dots');
-    dots.innerHTML = D.testimonials.map(function (_, i) { return '<button aria-label="Show testimonial ' + (i + 1) + '"></button>'; }).join('');
-    var dotEls = $$('button', dots);
-    function go(i) {
-      idx = (i + slides) % slides;
-      track.style.transform = 'translateX(' + (-100 * idx) + '%)';
-      dotEls.forEach(function (d, k) { d.classList.toggle('is-active', k === idx); });
+    var swiped = false;
+    var cards = $$('.tm__card', stage);
+    var dotsBox = $('#tmDots'), live = $('#tmLive'), tm = $('#tm');
+    dotsBox.innerHTML = T.map(function (_, i) { return '<button type="button" aria-label="Show testimonial ' + (i + 1) + ' of ' + n + '"></button>'; }).join('');
+    var dotEls = $$('button', dotsBox);
+
+    function sizeStage() {
+      var h = 0;
+      cards.forEach(function (c) { h = Math.max(h, c.offsetHeight); });
+      stage.style.height = (h + 120) + 'px';
     }
-    function auto() { clearInterval(timer); if (!reduce && slides > 1) timer = setInterval(function () { go(idx + 1); }, 6500); }
-    dotEls.forEach(function (d, k) { d.addEventListener('click', function () { go(k); auto(); }); });
-    $('#prev').addEventListener('click', function () { go(idx - 1); auto(); });
-    $('#next').addEventListener('click', function () { go(idx + 1); auto(); });
-    var sx = null, sl = $('#slider');
-    sl.addEventListener('touchstart', function (e) { sx = e.touches[0].clientX; }, { passive: true });
-    sl.addEventListener('touchend', function (e) {
-      if (sx === null) return;
-      var dx = e.changedTouches[0].clientX - sx;
-      if (Math.abs(dx) > 40) { go(idx + (dx < 0 ? 1 : -1)); auto(); }
-      sx = null;
+    function layout(announce) {
+      cards.forEach(function (c, i) {
+        var d = ((i - cur) % n + n) % n, pos;
+        if (d === 0) pos = 'active';
+        else if (n === 2) pos = 'next';
+        else if (d === 1) pos = 'next';
+        else if (d === n - 1) pos = 'prev';
+        else pos = 'hidden';
+        c.setAttribute('data-pos', pos);
+        c.setAttribute('aria-hidden', pos === 'active' ? 'false' : 'true');
+      });
+      dotEls.forEach(function (d, k) {
+        d.classList.toggle('is-active', k === cur);
+        if (k === cur) d.setAttribute('aria-current', 'true'); else d.removeAttribute('aria-current');
+      });
+      if (announce) live.textContent = 'Showing testimonial ' + (cur + 1) + ' of ' + n;
+      sizeStage();
+    }
+    function go(i, announce) { cur = ((i % n) + n) % n; layout(announce !== false); }
+    $('#tmPrev').addEventListener('click', function () { go(cur - 1); });
+    $('#tmNext').addEventListener('click', function () { go(cur + 1); });
+    dotEls.forEach(function (d, k) { d.addEventListener('click', function () { go(k); }); });
+    cards.forEach(function (c, i) {
+      c.addEventListener('click', function () { if (swiped) return; if (c.getAttribute('data-pos') !== 'active') go(i); });
+      /* hover effect that also works on touch screens */
+      var tmr;
+      c.addEventListener('pointerdown', function (e) {
+        if (e.pointerType === 'touch' || e.pointerType === 'pen') { c.classList.add('is-hover'); clearTimeout(tmr); tmr = setTimeout(function () { c.classList.remove('is-hover'); }, 1400); }
+      });
     });
-    sl.addEventListener('mouseenter', function () { clearInterval(timer); });
-    sl.addEventListener('mouseleave', auto);
-    go(0); auto();
+    tm.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') { e.preventDefault(); go(cur - 1); }
+      else if (e.key === 'ArrowRight') { e.preventDefault(); go(cur + 1); }
+      else if (e.key === 'Home') { e.preventDefault(); go(0); }
+      else if (e.key === 'End') { e.preventDefault(); go(n - 1); }
+    });
+    var sx = null;
+    stage.addEventListener('pointerdown', function (e) { sx = e.clientX; });
+    stage.addEventListener('pointerup', function (e) {
+      if (sx === null) return;
+      var dx = e.clientX - sx; sx = null;
+      if (Math.abs(dx) > 45) { swiped = true; setTimeout(function () { swiped = false; }, 400); go(cur + (dx < 0 ? 1 : -1)); }
+    });
+    stage.addEventListener('pointercancel', function () { sx = null; });
+    window.addEventListener('resize', sizeStage);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(sizeStage);
+    go(0, false);
   }
 
   /* ---------- FAQ accordion ---------- */
