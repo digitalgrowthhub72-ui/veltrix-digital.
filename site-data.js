@@ -31,7 +31,7 @@ window.VELTRIX = {
   portfolio: [
     { title: "ALIVE Wellness Retreats Website", category: "Websites", image: "assets/portfolio/alive.jpg", position: "top", link: "",
       description: "A luxury wellness website concept designed to showcase retreat experiences, wellness programs and destinations through elegant layouts, immersive imagery and clear booking calls to action." },
-    { title: "Luxury Wellness Retreat Landing Page", category: "Landing Pages", image: "", position: "top", link: "",
+    { title: "Luxury Wellness Retreat Landing Page", category: "Landing Pages", image: "assets/portfolio/landing-page-2.jpg", position: "top", link: "",
       description: "A premium landing page concept for a private wellness retreat, combining calming visuals, refined typography and prominent consultation or booking calls to action." },
     { title: "Studio North — Squarespace Website Customization", category: "Websites", image: "assets/portfolio/studio-north.jpg", position: "top", link: "",
       description: "A Squarespace website concept highlighting custom styling, responsive layouts and polished user experiences for creative businesses and growing brands." },
