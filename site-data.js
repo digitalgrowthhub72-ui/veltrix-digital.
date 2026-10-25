@@ -29,6 +29,14 @@ window.VELTRIX = {
        position: "top" or "center" (which part of a tall image shows on the card)
      --------------------------------------------------------------- */
   portfolio: [
+    { title: "ALIVE Wellness Retreats Website", category: "Websites", image: "assets/portfolio/alive.jpg", position: "top", link: "",
+      description: "A luxury wellness website concept designed to showcase retreat experiences, wellness programs and destinations through elegant layouts, immersive imagery and clear booking calls to action." },
+    { title: "Luxury Wellness Retreat Landing Page", category: "Landing Pages", image: "", position: "top", link: "",
+      description: "A premium landing page concept for a private wellness retreat, combining calming visuals, refined typography and prominent consultation or booking calls to action." },
+    { title: "Studio North — Squarespace Website Customization", category: "Websites", image: "assets/portfolio/studio-north.jpg", position: "top", link: "",
+      description: "A Squarespace website concept highlighting custom styling, responsive layouts and polished user experiences for creative businesses and growing brands." },
+    { title: "Studio Elevate — Squarespace Design & CSS", category: "Redesigns", image: "assets/portfolio/studio-elevate.jpg", position: "top", link: "",
+      description: "A modern Squarespace customization concept focused on improving website layouts, visual consistency, mobile responsiveness and brand presentation through thoughtful CSS enhancements." },
     { title: "Professional Business Website Design", category: "Websites", image: "assets/portfolio/business.jpg", position: "top", link: "",
       description: "A modern digital agency website concept showcasing services, brand messaging and a professional online presence." },
     { title: "Conversion-Focused Landing Page", category: "Landing Pages", image: "assets/portfolio/landing.jpg", position: "top", link: "",
