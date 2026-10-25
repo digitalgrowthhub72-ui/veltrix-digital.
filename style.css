@@ -240,7 +240,10 @@ h3{font-size:1.15rem}
 .work__tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--cyan);margin-bottom:.25rem}
 .work__info h3{font-size:1.1rem}
 .work__info p{font-size:.85rem;color:#b8c7de;line-height:1.4;max-height:0;opacity:0;overflow:hidden;transition:max-height .5s var(--ease),opacity .4s,margin .4s}
-.work:hover .work__info p{max-height:3.5em;opacity:1;margin-top:.3rem}
+.work:hover .work__info p{max-height:5.2em;opacity:1;margin-top:.3rem}
+.work__tags{display:flex;flex-wrap:wrap;gap:.3rem;max-height:0;opacity:0;overflow:hidden;transition:max-height .5s var(--ease),opacity .4s,margin .4s}
+.work__tags span{font-size:.68rem;font-weight:600;padding:.18rem .55rem;border-radius:99px;background:rgba(6,182,212,.16);color:#9be7f3}
+.work:hover .work__tags{max-height:4em;opacity:1;margin-top:.5rem}.work__info p{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;font-size:.8rem}.work__info h3{font-size:1rem}
 .work__open{position:absolute;top:1rem;right:1rem;width:40px;height:40px;border-radius:50%;background:#fff;color:var(--navy);display:grid;place-items:center;opacity:0;transform:scale(.6) rotate(-45deg);transition:all .45s var(--ease);z-index:2}
 .work:hover .work__open{opacity:1;transform:none}
 
@@ -474,8 +477,10 @@ h3{font-size:1.15rem}
   .tm__card[data-pos=active]:hover,.tm__card[data-pos=active].is-hover{transform:translateY(-14px) scale(1.02);box-shadow:14px -10px 0 0 var(--cyan),0 44px 60px -30px rgba(10,22,40,.55)}
 }
 @media (max-width:700px){.book__card iframe{height:980px}.book{padding-top:7rem}}
-@media (hover:none){.work__info p{max-height:3.6em;opacity:1;margin-top:.3rem}.work__open{display:none}}
+@media (hover:none){.work__info p{max-height:5.2em;opacity:1;margin-top:.3rem}.work__tags{max-height:4em;opacity:1;margin-top:.5rem}.work__open{display:none}}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
   .reveal{opacity:1;transform:none}
 }
+
+@media (max-width:699px){.work{aspect-ratio:1/1.05}}

@@ -87,10 +87,11 @@
       var media = p.image
         ? '<img src="' + esc(p.image) + '" alt="' + esc(p.title) + '" loading="lazy" style="object-position:' + esc(p.position || 'center') + '">'
         : '<div class="work__ph"><svg><use href="#i-image"/></svg><span>Project image coming soon</span></div>';
-      return '<article class="work reveal" style="--d:' + (i % 3) * 0.1 + 's" data-cat="' + esc(p.category) + '" data-img="' + esc(p.image) + '" data-link="' + esc(p.link) + '" data-title="' + esc(p.title) + '" tabindex="0">' +
+      return '<article class="work reveal" style="--d:' + (i % 3) * 0.1 + 's" data-cat="' + esc(p.filter || p.category) + '" data-tags="' + esc((p.tags || []).join(' · ')) + '" data-img="' + esc(p.image) + '" data-link="' + esc(p.link) + '" data-title="' + esc(p.title) + '" tabindex="0">' +
         media +
         '<span class="work__open"><svg><use href="#i-ext"/></svg></span>' +
-        '<div class="work__info"><span class="work__tag">' + esc(p.category) + '</span><h3>' + esc(p.title) + '</h3><p>' + esc(p.description) + '</p></div></article>';
+        '<div class="work__info"><span class="work__tag">' + esc(p.category) + '</span><h3>' + esc(p.title) + '</h3><p>' + esc(p.description) + '</p>' +
+        (p.tags && p.tags.length ? '<div class="work__tags">' + p.tags.map(function (t) { return '<span>' + esc(t) + '</span>'; }).join('') + '</div>' : '') + '</div></article>';
     }).join('');
 
     var lb = $('#lightbox'), lbImg = $('img', lb), lbP = $('p', lb);
@@ -103,7 +104,7 @@
       if (link) { window.open(link, '_blank', 'noopener'); return; }
       if (img) {
         lbImg.onload = function () { lb.classList.toggle('tall', lbImg.naturalHeight / lbImg.naturalWidth > 1.3); };
-        lbImg.src = img; lbImg.alt = w.getAttribute('data-title'); lbP.textContent = w.getAttribute('data-title');
+        lbImg.src = img; lbImg.alt = w.getAttribute('data-title'); lbP.textContent = w.getAttribute('data-title') + (w.getAttribute('data-tags') ? ' — ' + w.getAttribute('data-tags') : '');
         lb.hidden = false; requestAnimationFrame(function () { lb.classList.add('show'); });
       }
     }

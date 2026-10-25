@@ -27,6 +27,8 @@ window.VELTRIX = {
      Leave  image: ""  to show the "coming soon" placeholder.
      category must be one of: "Websites", "Landing Pages", "Redesigns", "Brand", "Automation"
        position: "top" or "center" (which part of a tall image shows on the card)
+       category = label shown on the card; filter = which filter button it appears under (defaults to category)
+       tags = optional small labels shown on the card and in the preview
      --------------------------------------------------------------- */
   portfolio: [
     { title: "ALIVE Wellness Retreats Website", category: "Websites", image: "assets/portfolio/alive.jpg", position: "top", link: "",
@@ -48,7 +50,37 @@ window.VELTRIX = {
     { title: "E-commerce Store Design", category: "Websites", image: "assets/portfolio/ecommerce.jpg", position: "center", link: "",
       description: "An e-commerce platform showcasing product management, storefront design and automated retail workflows." },
     { title: "CRM & Lead Follow-Up Automation", category: "Automation", image: "assets/portfolio/crm.jpg", position: "center", link: "",
-      description: "A CRM automation concept illustrating how lead capture, pipeline management and follow-up workflows can work together." }
+      description: "A CRM automation concept illustrating how lead capture, pipeline management and follow-up workflows can work together." },
+    { title: "LuxeSpa — Beauty & Wellness Website", category: "Beauty & Wellness", filter: "Websites", image: "assets/portfolio/luxespa.jpg", position: "top", link: "",
+      tags: ["Website Design", "UI/UX", "Booking Integration"],
+      description: "Designed an elegant spa website featuring beauty treatments, appointment booking, service highlights, customer testimonials, and opening hours." },
+    { title: "HomeFront Realty — Real Estate Website", category: "Real Estate", filter: "Websites", image: "assets/portfolio/homefront.jpg", position: "top", link: "",
+      tags: ["Real Estate Web Design", "Property Listings", "Responsive Design"],
+      description: "Created a modern real estate website concept with property listings, search filters, featured homes, and client testimonials to help visitors discover properties easily." },
+    { title: "Fallspa — Spa Services Website", category: "Beauty & Wellness", filter: "Websites", image: "assets/portfolio/fallspa.jpg", position: "top", link: "",
+      tags: ["Spa Website", "Landing Page Design", "Appointment Forms"],
+      description: "Designed a calming spa website showcasing treatment services, appointment forms, business hours, and a dedicated testimonial section." },
+    { title: "Aurea Solutions — Corporate Business Website", category: "Corporate & Technology", filter: "Websites", image: "assets/portfolio/aurea.jpg", position: "top", link: "",
+      tags: ["Corporate Web Design", "Lead Generation", "Business Website"],
+      description: "Developed a professional corporate website concept highlighting digital services, business solutions, company vision, and a contact form for lead generation." },
+    { title: "Eliza Hart — Wedding Photography Portfolio", category: "Photography", filter: "Websites", image: "assets/portfolio/eliza-hart.jpg", position: "top", link: "",
+      tags: ["Photography Website", "Portfolio Design", "Luxury Branding"],
+      description: "Created an elegant photography portfolio with immersive imagery, curated galleries, service information, and enquiry calls to action to attract wedding clients." },
+    { title: "The Table — Restaurant Website", category: "Food & Hospitality", filter: "Websites", image: "assets/portfolio/the-table.jpg", position: "top", link: "",
+      tags: ["Restaurant Web Design", "Menu Layout", "Reservations"],
+      description: "Designed a stylish restaurant website featuring menu highlights, food photography, restaurant information, and prominent table reservation calls to action." },
+    { title: "Alex Morgan — Creative Designer Portfolio", category: "Personal Portfolio", filter: "Websites", image: "assets/portfolio/alex-morgan.jpg", position: "top", link: "",
+      tags: ["Portfolio Website", "Personal Branding", "UI/UX Design"],
+      description: "Designed a contemporary personal portfolio showcasing selected projects, professional services, client feedback, and clear contact options." },
+    { title: "Northbridge Academy — Online Education Website", category: "Education & E-learning", filter: "Websites", image: "assets/portfolio/northbridge.jpg", position: "top", link: "",
+      tags: ["Education Website", "E-learning", "Course Promotion"],
+      description: "Created an educational website concept presenting online courses, learning resources, membership options, and calls to action designed to encourage enrolment." },
+    { title: "Harper Quinn — Blog Design & Customization", category: "Blog & Content", filter: "Websites", image: "assets/portfolio/harper-blog.jpg", position: "top", link: "",
+      tags: ["Squarespace", "Blog Design", "Website Customization"],
+      description: "Designed a content-focused website concept with an editorial layout, blog services, project showcases, and testimonials to help brands publish content professionally." },
+    { title: "Harper Quinn — Web Designer Portfolio Website", category: "Professional Services", filter: "Websites", image: "assets/portfolio/harper-portfolio.jpg", position: "top", link: "",
+      tags: ["Web Design", "Portfolio Website", "Personal Branding"],
+      description: "Created a polished designer portfolio featuring an introduction, services, selected projects, experience highlights, client testimonials, and a project enquiry form." },
   ],
 
   /* ---------------------------------------------------------------
