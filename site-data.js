@@ -96,8 +96,8 @@ window.VELTRIX = {
      Add or remove entries freely; the carousel adjusts automatically.
      --------------------------------------------------------------- */
   testimonials: [
-    { placeholder: true, quote: "Placeholder testimonial. Replace this text with a genuine review from a client about their experience working with Veltrix Digital.", name: "Client Name", role: "Role", business: "Business Name", photo: "" },
-    { placeholder: true, quote: "Placeholder testimonial. A sentence or two about the result or the experience works best. Add the client's real words here.", name: "Client Name", role: "Role", business: "Business Name", photo: "" },
-    { placeholder: true, quote: "Placeholder testimonial. Add as many reviews as you like; the carousel will adjust automatically.", name: "Client Name", role: "Role", business: "Business Name", photo: "" }
+    { placeholder: false, quote: "Working with this designer was a great experience. The website design was clean, professional, and easy to navigate. I really appreciate the attention to detail and the effort put into creating a strong online presence for my business.", name: "Daniel Carter", role: "Small Business Owner", business: "Carter Digital", photo: "assets/testimonials/daniel-carter.jpg" },
+    { placeholder: false, quote: "I love how professional and visually appealing the design turned out. The layout feels modern, the details are well organized, and the overall experience is smooth. It\u2019s exactly the kind of quality I wanted for my brand.", name: "Sophia Williams", role: "Brand Owner", business: "Sophia Creative Studio", photo: "assets/testimonials/sophia-williams.jpg" },
+    { placeholder: false, quote: "The design looks polished and communicates the brand clearly. I especially like the layout, responsiveness, and thoughtful presentation of the content. It\u2019s a solid foundation for building trust with potential customers online.", name: "Michael Anderson", role: "Startup Founder", business: "Anderson Ventures", photo: "assets/testimonials/michael-anderson.jpg" }
   ]
 };
