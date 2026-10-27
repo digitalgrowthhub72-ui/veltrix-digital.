@@ -81,6 +81,16 @@ window.VELTRIX = {
     { title: "Harper Quinn — Web Designer Portfolio Website", category: "Professional Services", filter: "Websites", image: "assets/portfolio/harper-portfolio.jpg", position: "top", link: "",
       tags: ["Web Design", "Portfolio Website", "Personal Branding"],
       description: "Created a polished designer portfolio featuring an introduction, services, selected projects, experience highlights, client testimonials, and a project enquiry form." },
+    { title: "HVAC Business Website Design", category: "Websites", image: "assets/portfolio/hvac-website.jpg", position: "top", link: "",
+      description: "A professional, conversion-focused website concept for an HVAC company, designed to showcase heating and cooling services, build customer trust, and generate service inquiries." },
+    { title: "Business Workflow Automation", category: "Automation", image: "assets/portfolio/workflow-automation.jpg", position: "center", link: "",
+      description: "A visual representation of smart business automation designed to simplify repetitive tasks, connect business processes, and improve operational efficiency." },
+    { title: "OA Corporate Brand Identity Design", category: "Brand", image: "assets/portfolio/oa-brand-identity.jpg", position: "center", link: "",
+      description: "A modern corporate identity concept featuring a distinctive monogram, a dark green and lime color palette, and coordinated branded stationery for a consistent professional image." },
+    { title: "SaaS Product Landing Page Design", category: "Landing Pages", image: "assets/portfolio/saas-landing-page.jpg", position: "top", link: "",
+      description: "A modern SaaS landing page concept designed to communicate product value, highlight software features, present pricing plans, and encourage visitors to start a free trial." },
+    { title: "Professional Consulting Website Design", category: "Redesigns", image: "assets/portfolio/consulting-website.jpg", position: "top", link: "",
+      description: "A modern consulting website concept designed to communicate expertise, present professional services, introduce team members, and encourage potential clients to book consultations." },
   ],
 
   /* ---------------------------------------------------------------
