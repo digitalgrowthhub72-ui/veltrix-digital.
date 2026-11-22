@@ -59,14 +59,18 @@
     ['i-layers', 'Website Setup & Structure', 'Organised pages, content and navigation for a better user experience.'],
     ['i-search', 'Basic SEO', 'Simple, solid practices that help improve your website’s visibility.'],
     ['i-chart', 'Digital Marketing Support', 'Connecting your website with your wider online marketing activities.'],
-    ['i-pen', 'Visual & Brand Design', 'Supporting visuals that keep your brand looking professional.']
+    ['i-pen', 'Visual & Brand Design', 'Supporting visuals that keep your brand looking professional.'],
+    ['i-video', 'AI Promo & Ad Videos', 'Short, eye-catching AI-made videos that promote your business, product or offer.'],
+    ['i-video', 'AI Social Media Videos', 'Reels, shorts and clips made to keep your social media active and engaging.'],
+    ['i-video', 'AI Explainer & Product Videos', 'Clear videos that explain what you do or show how your product works.'],
+    ['i-video', 'AI Avatar & Presenter Videos', 'Presenter-style videos that deliver your message on screen with an AI avatar.']
   ];
   var sg = $('#servicesGrid');
   if (sg) {
     sg.innerHTML = services.map(function (s, i) {
       var msg = 'Hello Ayuba, I\'m interested in ' + s[1] + ' for my business.';
       return '<a class="svc reveal" style="--d:' + (i % 4) * 0.08 + 's" href="#" data-talk data-msg="' + esc(msg) + '">' +
-        '<span class="svc__n">0' + (i + 1) + '</span>' +
+        '<span class="svc__n">' + (i < 9 ? '0' : '') + (i + 1) + '</span>' +
         '<span class="svc__icon"><svg><use href="#' + s[0] + '"/></svg></span>' +
         '<h3>' + esc(s[1]) + '</h3><p>' + esc(s[2]) + '</p>' +
         '<span class="svc__link">Let’s talk <svg><use href="#i-arrow"/></svg></span></a>';

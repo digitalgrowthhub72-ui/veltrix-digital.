@@ -15,7 +15,7 @@ window.VELTRIX = {
 
   /* Default message that opens in WhatsApp when someone clicks any button */
   defaultMessage:
-    "Hello Ayuba, I found Veltrix Digital online and I'd like to chat about a website for my business.",
+    "Hello Ayuba, I found Veltrix Digital online and I'd like to chat about a website or AI video for my business.",
 
   /* ---------------------------------------------------------------
      PORTFOLIO
@@ -25,7 +25,7 @@ window.VELTRIX = {
        2. Set  image: "assets/portfolio/project-1.jpg"
        3. Change the title, category, and (optional) link
      Leave  image: ""  to show the "coming soon" placeholder.
-     category must be one of: "Websites", "Landing Pages", "Redesigns", "Brand", "Automation"
+     category must be one of: "Websites", "Landing Pages", "Redesigns", "Brand", "Automation", "AI Video"
        position: "top" or "center" (which part of a tall image shows on the card)
        category = label shown on the card; filter = which filter button it appears under (defaults to category)
        tags = optional small labels shown on the card and in the preview
@@ -107,6 +107,12 @@ window.VELTRIX = {
       description: "An email marketing automation concept illustrating campaign scheduling, audience segmentation, automated messaging, engagement tracking, and workflow optimization." },
     { title: "AI-Powered Business Automation", category: "Automation", image: "assets/portfolio/ai-automation.jpg", position: "center", link: "",
       description: "An AI automation concept showcasing connected business systems for customer communication, data management, reporting, and streamlined workflows." },
+    { title: "AI Promo Video (Sample Coming Soon)", category: "AI Video", image: "", position: "center", link: "",
+      description: "Placeholder: sample coming soon. Replace with a real AI video project." },
+    { title: "AI Social Media Video (Sample Coming Soon)", category: "AI Video", image: "", position: "center", link: "",
+      description: "Placeholder: sample coming soon. Replace with a real AI video project." },
+    { title: "AI Explainer Video (Sample Coming Soon)", category: "AI Video", image: "", position: "center", link: "",
+      description: "Placeholder: sample coming soon. Replace with a real AI video project." },
   ],
 
   /* ---------------------------------------------------------------
