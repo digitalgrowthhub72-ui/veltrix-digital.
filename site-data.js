@@ -25,6 +25,7 @@ window.VELTRIX = {
        2. Set  image: "assets/portfolio/project-1.jpg"
        3. Change the title, category, and (optional) link
      Leave  image: ""  to show the "coming soon" placeholder.
+       video: optional path to an .mp4 (example: assets/portfolio/my-video.mp4). The card shows the image as a cover and plays the video when clicked.
      category must be one of: "Websites", "Landing Pages", "Redesigns", "Brand", "Automation", "AI Video"
        position: "top" or "center" (which part of a tall image shows on the card)
        category = label shown on the card; filter = which filter button it appears under (defaults to category)
@@ -111,8 +112,8 @@ window.VELTRIX = {
       description: "Placeholder: sample coming soon. Replace with a real AI video project." },
     { title: "AI Social Media Video (Sample Coming Soon)", category: "AI Video", image: "", position: "center", link: "",
       description: "Placeholder: sample coming soon. Replace with a real AI video project." },
-    { title: "AI Explainer Video (Sample Coming Soon)", category: "AI Video", image: "", position: "center", link: "",
-      description: "Placeholder: sample coming soon. Replace with a real AI video project." },
+    { title: "AI Product Promo Video", category: "AI Video", image: "assets/portfolio/ai-product-video.jpg", video: "assets/portfolio/ai-product-video.mp4", position: "center", link: "",
+      description: "A short AI-generated product video showcasing a skincare tool in a clean, premium style." },
   ],
 
   /* ---------------------------------------------------------------
