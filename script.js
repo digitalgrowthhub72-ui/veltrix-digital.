@@ -100,6 +100,7 @@
 
     var lb = $('#lightbox'), lbImg = $('img', lb), lbP = $('p', lb);
     var lbVid = document.createElement('video');
+    lbVid.addEventListener('loadedmetadata', function () { lbVid.classList.toggle('wide', lbVid.videoWidth > lbVid.videoHeight); });
     lbVid.controls = true; lbVid.playsInline = true; lbVid.preload = 'metadata'; lbVid.hidden = true;
     lbImg.parentNode.insertBefore(lbVid, lbImg.nextSibling);
     function closeLb() { lb.classList.remove('show'); lbVid.pause(); setTimeout(function () { lb.hidden = true; if (!lbVid.hidden) { lbVid.removeAttribute('src'); lbVid.load(); } }, 300); }
@@ -111,7 +112,7 @@
       if (link) { window.open(link, '_blank', 'noopener'); return; }
       if (vid) {
         lb.classList.remove('tall'); lbImg.hidden = true; lbVid.hidden = false;
-        lbVid.src = vid; lbVid.poster = img || ''; lbP.textContent = w.getAttribute('data-title') + (w.getAttribute('data-tags') ? ' — ' + w.getAttribute('data-tags') : '');
+        lbVid.classList.remove('wide'); lbVid.src = vid; lbVid.poster = img || ''; lbP.textContent = w.getAttribute('data-title') + (w.getAttribute('data-tags') ? ' — ' + w.getAttribute('data-tags') : '');
         lb.hidden = false; requestAnimationFrame(function () { lb.classList.add('show'); var pr = lbVid.play(); if (pr && pr.catch) pr.catch(function () {}); });
         return;
       }
