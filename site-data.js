@@ -114,6 +114,12 @@ window.VELTRIX = {
       description: "Placeholder: sample coming soon. Replace with a real AI video project." },
     { title: "AI Product Promo Video", category: "AI Video", image: "assets/portfolio/ai-product-video.jpg", video: "assets/portfolio/ai-product-video.mp4", position: "center", link: "",
       description: "A short AI-generated product video showcasing a skincare tool in a clean, premium style." },
+    { title: "AI UGC Video (Sample Coming Soon)", category: "AI Video", image: "", position: "center", link: "",
+      description: "Placeholder: sample coming soon. Replace with a real AI video project." },
+    { title: "AI Product Ad Video (Sample Coming Soon)", category: "AI Video", image: "", position: "center", link: "",
+      description: "Placeholder: sample coming soon. Replace with a real AI video project." },
+    { title: "AI Avatar Video (Sample Coming Soon)", category: "AI Video", image: "", position: "center", link: "",
+      description: "Placeholder: sample coming soon. Replace with a real AI video project." },
   ],
 
   /* ---------------------------------------------------------------
