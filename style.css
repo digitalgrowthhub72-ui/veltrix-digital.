@@ -491,3 +491,9 @@ h3{font-size:1.15rem}
 .lightbox video{margin-top:auto;max-height:80vh;max-width:min(420px,100%);border-radius:16px;background:#000}
 .lightbox video[hidden],.lightbox img[hidden]{display:none}
 .lightbox video.wide{max-width:min(900px,100%)}
+
+.about__photo--video{max-width:none}
+.about__photo--video .about__frame::after{display:none}
+.about__photo--video video{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:#06101f}
+@media (min-width:1024px){.page-about .about__grid{grid-template-columns:minmax(0,580px) minmax(0,1fr);gap:clamp(2.5rem,5vw,5rem)}}
+@media (min-width:981px){.about__photo--video{align-self:start;margin-top:.6rem}}
